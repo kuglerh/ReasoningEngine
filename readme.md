@@ -2,6 +2,12 @@
 
 The Reasoning Engine is a proof-of-concept framework for SMT-based symbolic reasoning about discrete dynamical systems. It was inspired by the Reasoning Engine for Interaction Networks (RE:IN) project[<sup>1</sup>][Dunn2014]<sup>,</sup>[<sup>2</sup>][Yordanov2016], which applied SMT-based reasoning to biological interaction networks. RE:IN provided a domain-specific language (DSL) for encoding such networks together with experimental observations as an SMT problem and solving verification, synthesis and optimization problems using the Z3 prover[<sup>3</sup>][Z3]. To support the development of additional biological DSLs and support the analysis of other classes of biological models, a more flexible reasoning framework was required. The Reasoning Engine provides such a framework.
 
+## Publications
+
+The farmework is described in the following paper:
+
+Yordanov, Boyan, Sara-Jane Dunn, Colin Gravill, Hillel Kugler, and Christoph M. Wintersteiger. "An SMT-Based Framework for Reasoning About Discrete Biological Models." In Bioinformatics Research and Applications: 18th International Symposium, ISBRA 2022, Haifa, Israel, November 14–17, 2022, Proceedings, pp. 114-125. Cham: Springer Nature Switzerland, 2023.
+
 
 ## Reasoning Engine Basics
 The Reasoning Engine defines a set of data structures and a corresponding DSL (the Reasoning Engine Intermediate Language REIL) for describing generic discrete dynamical systems. It follows a Bounded Model Checking (BMC) approach to unroll system trajectories symbolically and allows for various constraints to be defined over these abstract executions of the system. The complete description of the system and associated constraints is then encoded as an SMT problem and solved using Z3, which enables various analysis, synthesis and optimization queries to be tackled. The intermediate language can be a compilation target for higher-level DSLs, thus accelerating the development of domain-specific reasoning tools. In the future, a client/server architecture could be developed where the Reasoning Engine exists as a service that could process REIL queries and return results to various client tools. 
